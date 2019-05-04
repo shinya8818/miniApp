@@ -1,0 +1,10 @@
+<div class="contents row">
+  <a href="/">一覧にもどる</a>
+  <%= form_tag("/#{@tweet.id}", method: :patch) do %>
+    <h3>
+      編集する
+    </h3>
+    <textarea name="text" placeholder="記事を編集してください" rows="10" cols="50"><%= @tweet.text %></textarea>
+    <p><input type="submit" value="投稿"></p>
+  <% end %>
+</div>

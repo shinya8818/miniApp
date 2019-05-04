@@ -1,0 +1,36 @@
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">miniApp</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <li><a href="/tweets/new">投稿</a></li>
+        <% else %>
+        <li><a href="users/sign_in">ログイン</a></li>
+        <li><a href="users/sign_up">会員登録</a></li>
+      <% end %>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <% @tweets.each do |tweet| %>
+      <div class="col s12 m6">
+        <div class="card grey lighten-1">
+          <div class="card-content black-text">
+            <!-- <span class="card-title">Card Title</span> -->
+            <p><%= tweet.text %></p>
+          </div>
+            <div class="card-action">
+              <% if user_signed_in? %>
+                <ul>
+                  <li><%= link_to '削除', "/#{tweet.id}", method: :delete %></li>
+                  <li><%= link_to '編集', "/#{tweet.id}/edit", method: :get %></li>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+      </div>
+      <% end %>
+    <%= paginate(@tweets) %>
+  </div>

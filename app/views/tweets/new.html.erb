@@ -1,0 +1,7 @@
+<div class="contents row">
+  <a href="/tweets">一覧にもどる</a>
+  <%= form_tag('/tweets', method: :post) do %>
+    <textarea name="text" placeholder="記事を書いてください" rows="10" cols="50"></textarea>
+    <p><input type="submit" value="投稿"></p>
+  <% end %>
+</div>

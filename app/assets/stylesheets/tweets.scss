@@ -1,0 +1,35 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-size: 20px;
+}
+
+.col {
+  font-size: 20px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.back {
+  float:right;
+}
+
+input[type="text"] {
+        width: 300px;
+        height: 40px;
+    }
+
+input[type="text"] {
+        width: 300px;
+        height: 90px;
+    }
+
+h3 {
+ color: #90caf9;
+}
+
+nav ul a {
+  float:right;
+}
